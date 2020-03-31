@@ -78,7 +78,7 @@ for i, arr in enumerate(dist_mat_imp2):
         dist_list_imp2.append(e)
 
     if (i % 7000 == 0) | (i == len(dist_mat_imp2)-1):    
-        with open('dist_list_imp2_{}.pkl', 'wb') as f:
+        with open('dist_list_imp2_{}.pkl'.format(i), 'wb') as f:
             pickle.dump(dist_list_imp2, f)
         dist_list_imp2 = []
 
