@@ -41,10 +41,9 @@ for i, d in generated_encodings_dict.items():
 
 dist_mat_imp1 = []
 for i, enc in enumerate(real_encodings_list):
-    print(i)
+    print(i)    
     # dist_mat.append(face_recognition.face_distance(real, enc))
     dist_mat_imp1.append(face_recognition.face_distance(generated_encodings_list, enc))
-
 
 # In[32]:
 
@@ -52,11 +51,13 @@ for i, enc in enumerate(real_encodings_list):
 dist_list_imp1 =  []
 for i, arr in enumerate(dist_mat_imp1):
     for e in arr[:i]:
-#     for e in arr[:i+1]:
         dist_list_imp1.append(e)
 
-with open('dist_list_imp1.pkl', 'wb') as f:
-    pickle.dump(dist_list_imp1, f)
+    if (i % 7000 == 0) | (i == len(dist_mat_imp1)-1):    
+        with open('dist_list_imp1_{}.pkl', 'wb') as f:
+            pickle.dump(dist_list_imp1, f)
+        dist_list_imp1 = []
+
 
 # In[29]:
 
