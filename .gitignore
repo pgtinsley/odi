@@ -4,7 +4,7 @@ generated_70000_sg2_chips/
 real_70000_ffhq/
 real_69747_ffhq_chips/
 
-fr/generated_encodings.pkl
-fr/real_encodings.pkl
+fr/__generated_encodings.pkl
+fr/__real_encodings.pkl
 
 insightface/deploy/models/
